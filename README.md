@@ -2,19 +2,19 @@
 
 ## Overview
 
----
-
 This is a port of node's path module to alow the use of `Buffer` and `URL` in paths instead of only `string`.
 
-## Why this module
+---
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d0eac8bbb5e94ce6b8e31618443aa8b1)](https://www.codacy.com/gh/n3okill/path-extender/dashboard?utm_source=github.com&utm_medium=referral&utm_content=n3okill/path-extender&utm_campaign=Badge_Grade) ![Test Status](https://github.com/n3okill/path-extender/actions/workflows/test.yml/badge.svg)
 
 ---
+
+## Why this module
 
 Because until node v17 at leats it isn't possible to use Buffer or URL in path module, but it's possible to make call's to the methods in the filesystem module using Buffer, URL or string, and with this module it's already possible to for example join 2 buffer's and send it to `fs.readFile`.
 
 ## Usage
-
----
 
 -   ### cjs
 
@@ -42,8 +42,6 @@ after this you only have to follow the node path documentation [Node Path](https
 
 ## Example
 
----
-
 ```js
 import path from "path-extender";
 
@@ -56,21 +54,15 @@ const joinedPath = path.join(dir, buf);
 
 ## Note
 
----
-
 If you only use strings or URL to work with path this module will default to use [Node Path](https://nodejs.org/api/path.html).
 
 ## Runing tests
-
----
 
 -   `npm run lint`: runs the linter
 -   `npm run unit`: run unit tests
 -   `npm test`: run both lint and unit tests
 
 ## Contribute
-
----
 
 If you find a problem with the package you can
 
@@ -82,15 +74,11 @@ or even make a
 
 ## Credits
 
----
-
 [Node Team](https://github.com/nodejs/node) - Obviously, for having created the path module in the first place.
 
 [bcoe](https://github.com/bcoe/path-buffer) - Creator of `path-buffer` a partial implementation of node's path with buffers, ad from where the basis of this module come from.
 
 ## License
-
----
 
 Licensed under MIT
 
