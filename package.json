@@ -26,7 +26,7 @@
         "clean:dist": "rimraf ./dist",
         "build:mjs": "npx tsc -p tsconfig-mjs.json",
         "build:cjs": "npx tsc -p tsconfig-cjs.json",
-        "build:package.json": "node ./build.js",
+        "build:package.json": "node ./build.cjs",
         "lint": "eslint src --ext .ts && eslint test --ext .ts",
         "format": "prettier --config .prettierrc \"src/**/*.ts\" \"test/**/*\" --write",
         "build": "npm run clean:dist && npm run build:mjs && npm run build:cjs && npm run build:package.json",
