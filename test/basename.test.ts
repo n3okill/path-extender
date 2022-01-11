@@ -1,14 +1,14 @@
 import { expect } from "chai";
 import { describe, test } from "mocha";
-import path from "../src";
+import path from "../src/index.js";
 
 describe("path-extender", function () {
     describe("> basename", function () {
         ["none", "utf8", "utf16le"].forEach(function (encoding) {
             describe("> both Encoding: " + encoding, function () {
                 const tests: Array<[test: Array<string>, result: string]> = [
-                    [[__filename], "basename.test.ts"],
-                    [[__filename, ".js"], "basename.test.ts"],
+                    [[import.meta.url], "basename.test.ts"],
+                    [[import.meta.url, ".js"], "basename.test.ts"],
                     [[".js", ".js"], ""],
                     [[""], ""],
                     [["/dir/basename.ext"], "basename.ext"],

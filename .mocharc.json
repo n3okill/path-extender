@@ -1,7 +1,7 @@
 {
-    "extension": ["ts"],
-    "spec": "test/**/*.test.ts",
-    "require": "ts-node/register",
+    "extension": ["ts","js"],
+    "spec": "test/**/*.test.{ts,cjs,mjs}",
+    "loader":"ts-node/esm",
     "colors": true,
     "recursive": "true",
     "check-leaks": true

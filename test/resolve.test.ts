@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { describe, test } from "mocha";
-import path from "../src";
+import path from "../src/index.js";
 
 describe("path-extender", function () {
     describe("> resolve", function () {

@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { describe, test } from "mocha";
-import path from "../src/index.js";
+import path from "../../dist/mjs/index.js";
 import * as NodePath from "path";
 import * as NodeUrl from "url";
 export const platformIsWin32 = process.platform === "win32";
@@ -18,13 +18,8 @@ describe("path-extender", function () {
                         const result = path.dirname(filePath);
                         expect(result).to.be.equal(pathdirname);
                     } else {
-                        const p = Buffer.from(
-                            filePath,
-                            encoding as BufferEncoding
-                        );
-                        const result = path
-                            .dirname(p)
-                            .toString(encoding as BufferEncoding);
+                        const p = Buffer.from(filePath, encoding);
+                        const result = path.dirname(p).toString(encoding);
                         expect(result).to.be.equal(pathdirname);
                     }
                 });
@@ -47,17 +42,10 @@ describe("path-extender", function () {
                         if (encoding === "none") {
                             expect(path.posix.dirname(t[0])).to.be.equal(t[1]);
                         } else {
-                            const p = Buffer.from(
-                                t[0],
-                                encoding as BufferEncoding
-                            );
+                            const p = Buffer.from(t[0], encoding);
                             const result = path.posix
                                 .dirname(p)
-                                .toString(
-                                    t[0]
-                                        ? (encoding as BufferEncoding)
-                                        : undefined
-                                );
+                                .toString(t[0] ? encoding : undefined);
                             expect(result).to.be.equal(t[1]);
                         }
                     });
@@ -110,17 +98,10 @@ describe("path-extender", function () {
                         if (encoding === "none") {
                             expect(path.win32.dirname(t[0])).to.be.equal(t[1]);
                         } else {
-                            const p = Buffer.from(
-                                t[0],
-                                encoding as BufferEncoding
-                            );
+                            const p = Buffer.from(t[0], encoding);
                             const result = path.win32
                                 .dirname(p)
-                                .toString(
-                                    t[0]
-                                        ? (encoding as BufferEncoding)
-                                        : undefined
-                                );
+                                .toString(t[0] ? encoding : undefined);
                             expect(result).to.be.equal(t[1]);
                         }
                     });

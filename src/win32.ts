@@ -16,7 +16,7 @@ import {
     CHAR_CODE_SEMICOLON,
     getFirstEncoding,
     format as _format,
-} from "./util";
+} from "./util.js";
 
 /**
  * path.resolve([from ...], to)

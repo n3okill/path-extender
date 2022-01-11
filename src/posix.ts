@@ -14,7 +14,7 @@ import {
     CHAR_CODE_COLON,
     getFirstEncoding,
     format as _format,
-} from "./util";
+} from "./util.js";
 
 /**
  * path.resolve([from ...], to)

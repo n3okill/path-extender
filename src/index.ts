@@ -1,6 +1,6 @@
-import * as posixAux from "./posix";
-import { platformIsWin32, FormatInputPathObjectBuffer } from "./util";
-import * as win32Aux from "./win32";
+import * as posixAux from "./posix.js";
+import { platformIsWin32, FormatInputPathObjectBuffer } from "./util.js";
+import * as win32Aux from "./win32.js";
 
 const posix = {
     ...posixAux,
@@ -18,4 +18,4 @@ const win32 = {
 };
 export { FormatInputPathObjectBuffer };
 export default platformIsWin32 ? { ...win32 } : { ...posix };
-module.exports = platformIsWin32 ? { ...win32 } : { ...posix };
+//module.exports = platformIsWin32 ? { ...win32 } : { ...posix };

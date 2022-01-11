@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { describe, test } from "mocha";
-import path from "../src";
+import path from "../src/index.js";
 
 // These testcases are specific to one uncommon behavior in path module. Few
 // of the functions in path module, treat '' strings as current working

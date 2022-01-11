@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { describe, test } from "mocha";
-import path from "../src";
+import path from "../src/index.js";
 import * as NodePath from "path";
 import * as NodeUrl from "url";
 

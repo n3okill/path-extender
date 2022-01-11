@@ -1,13 +1,13 @@
 import { expect } from "chai";
 import { describe, test } from "mocha";
-import path from "../src";
+import path from "../src/index.js";
 
 describe("path-extender", function () {
     describe("> extname", function () {
         ["none", "utf8", "utf16le"].forEach(function (encoding) {
             describe("> both Encoding: " + encoding, function () {
                 const tests = [
-                    [__filename, ".ts"],
+                    [import.meta.url, ".ts"],
                     ["", ""],
                     ["/path/to/file", ""],
                     ["/path/to/file.ext", ".ext"],
